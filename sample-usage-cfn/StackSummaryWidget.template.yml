@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  Dashboard:
+    Type: AWS::CloudWatch::Dashboard
+    Properties:
+      DashboardBody: 
+        Fn::Sub:
+         - |
+            {
+                "widgets": [
+                    {
+                        "type": "custom",
+                        "width": 12,
+                        "height": 40,
+                        "properties": {
+                            "endpoint": "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:CloudFormationStackSummarizer",
+                            "title": "CloudFormation Resources",
+                            "params": {
+                                "stacks": ["CloudFormationSummarizer"]
+                            }
+                        }
+                    }
+                ]
+            }
+         - {}
+      DashboardName: CloudFormationSummarizer

@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+"Jinja2" = "~=2.11.3"
+"requests" = "~=2.26.0"
+"boto3" = "~=1.18.61"
+"botocore" = "~=1.21.61"
+# fix an issue with ImportError: cannot import name 'soft_unicode' from 'markupsafe'
+# similar to issue described here: https://github.com/aws/aws-sam-cli/issues/3661
+"markupsafe" = "==2.0.1"
+
+[dev-packages]
+"isort" = "~=5.10.1"
+"flake8" = "~=4.0.1"
+"autopep8" = "~=1.6.0"
+
+[requires]
+python_version = "3.9"

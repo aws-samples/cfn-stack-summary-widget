@@ -1,0 +1,40 @@
+{% if resources %}
+<div style="padding: 1em">
+    <table style="width: 100%">
+        <tr>
+            <th id="th1" headers="blank" colspan="2">
+                <a target="_blank" href="{{ stack_link }}">{{ stack_name }}</a><br/>
+                <small>Last Update: {{ date.strftime('%Y-%m-%d %H:%M:%S') }}</small>
+            </th>
+        </tr>
+        {% for resource_type in resources %}
+        <tr>
+            <th id="th1" headers="blank" colspan="2">{{ resource_type }}</th>
+        </tr>
+        {% for resource in resources[resource_type] %}
+        <tr>
+            <td>
+                {% if resource.href is defined %}
+                    <a target="_blank" href="{{ resource.href }}">{{ resource.label }}</a>
+                {% else %}
+                    {{ resource.label|default(resource.physical_id) }}
+                {% endif %}
+            </td>
+            <td>
+
+                {% if resource.links|length == 1 %}
+                    <a target="_blank" href="{{ resource.links[resource.links|first].href }}">{{ resource.links|first }}</a>
+                {% elif resource.links %}
+                <ul>
+                    {% for link_label in resource.links %}
+                    <li><a target="_blank" href="{{ resource.links[link_label].href }}">{{ link_label }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+    </table>
+</div>
+{% endif %}

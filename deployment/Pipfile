@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+"aws-cdk.core" = "==1.127"
+"aws-cdk.aws-s3-assets" = "==1.127"
+"aws-cdk.aws-lambda" = "==1.127"
+"aws-cdk.aws-logs" = "==1.127"
+"aws-cdk.aws-sns" = "==1.127"
+"aws-cdk.aws-sns-subscriptions" = "==1.127"
+"aws-cdk.aws-iam" = "==1.127"
+"aws-cdk.aws-sqs" = "==1.127"
+"aws-cdk.aws-cloudwatch" = "==1.127"
+
+[dev-packages]
+"isort" = "~=5.10.1"
+"flake8" = "~=4.0.1"
+"autopep8" = "~=1.6.0"
+
+[requires]
+python_version = "3.9"
