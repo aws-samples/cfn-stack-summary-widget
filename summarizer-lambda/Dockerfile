@@ -17,5 +17,6 @@ RUN python -m venv /tmp/.venv && \
     /tmp/.venv/bin/pipenv lock -r --keep-outdated > "$BUILD_DIR/requirements.txt" && \
     /tmp/.venv/bin/python -m pip install -q -r "$BUILD_DIR/requirements.txt" --no-compile --target "$BUILD_DIR"
 COPY *.py *.j2 *.md $BUILD_DIR/
+COPY resource_types/ $BUILD_DIR/resource_types/
 WORKDIR $BUILD_DIR
 RUN zip -qr "/root/lambda.zip" *
