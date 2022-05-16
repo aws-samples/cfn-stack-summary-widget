@@ -1,5 +1,5 @@
 {
-  "app": "python -m pipenv run python app.py",
+  "app": "python3 -m pipenv run python app.py",
   "watch": {
     "include": [
       "**"

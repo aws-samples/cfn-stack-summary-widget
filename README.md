@@ -4,29 +4,35 @@ This repository demonstrates how to create a CloudWatch dashboard widget that
 provides an HTML summary of one or more CloudFormation stacks. The summary lists 
 important resources along helpful links to the AWS console. 
 
-![Screenshot of a stack summary widget on a CloudWatch dashboard](DashboardScreenshot.png)
-
-## Architecture
-
-![Diagram showing solution architecture](Architecture.png)
+![Screenshot of a stack summary widget on a CloudWatch dashboard](DashboardScreenshot-Annotated.png)
 
 ## Deploy the stack summarizer lambda function
 
 The `deployment` directory contains a CDK app that deploys an AWS Lambda 
 function named `CloudFormationStackSummarizer`. This function can be selected
-when creating a [custom widget in a CloudWatch dashboard]().
+when creating a [custom widget in a CloudWatch dashboard](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/add_custom_widget_dashboard_create.html).
 
 ### Requirements
  - Docker CLI
  - AWS CDK CLI
  - Python >= 3.9
- - [Pipenv](https://pipenv.pypa.io/en/latest/)
+ - Pipenv - See [Pipenv Documentation](https://pipenv.pypa.io/en/latest/) for installation instructions
+ - Valid AWS credentials
+
+#### Before you start
+
+Make sure your command line environment has valid AWS credentials set before you
+begin. See the [AWS CLI Documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
+for information on configuring your environment.
+
+This example assumes you can invoke Python as `python3`. If you do not have `python3` on your PATH. You may have 
+trouble deploying the CDK applications in the example.
 
 ### Deploy 
 
 ```bash
 cd deployment/
-python -m pipenv install
+python3 -m pipenv install
 cdk bootstrap
 cdk deploy --all --require-approval never
 ```

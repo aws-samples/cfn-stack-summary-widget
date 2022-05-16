@@ -1,5 +1,5 @@
 {
-  "app": "python -m pipenv run python app.py",
+  "app": "python3 -m pipenv run python app.py",
   "context": {
     "@aws-cdk/aws-apigateway:usagePlanKeyOrderInsensitiveId": true,
     "@aws-cdk/core:enableStackNameDuplicates": "true",
