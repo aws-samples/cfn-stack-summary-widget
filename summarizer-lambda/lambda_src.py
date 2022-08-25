@@ -37,9 +37,9 @@ TEMPLATES = {
     },
     "AWS::CloudFront::Distribution": {
         "label": "{{ physical_id }}",
-        "resource_link": "https://console.aws.amazon.com/cloudfront/home?region={{ region }}#distribution-settings:{{ physical_id }}",
+        "resource_link": "https://console.aws.amazon.com/cloudfront/v3/home#/distributions/{{ physical_id }}",
         "links": {
-            "Metrics": "https://console.aws.amazon.com/cloudfront/v2/home#/monitoring/{{ physical_id }}"
+            "Metrics": "https://console.aws.amazon.com/cloudfront/v3/home#/monitoring/distribution/{{ physical_id }}"
         },
     },
     "AWS::S3::Bucket": {
@@ -167,7 +167,7 @@ def render_stack_summary(stack_name: str, cloudformation) -> StackSummary:
     except botocore.exceptions.ClientError as e:
         if 'does not exist' in str(e):
             logger.warning("[%s] stack could not be found", stack_name)
-            return StackSummary(f"<p>no CloudFormation stack named '{stack_name}'</p>", stack_name)
+            return StackSummary(f"<p style=\"padding: 10; text-align: center\">no CloudFormation stack named '{stack_name}'</p>", stack_name)
 
     logger.info("[%s] looking up stack resources", stack_name)
     all_resources = get_stack_resources_by_type(cloudformation, stack_name)
@@ -185,7 +185,7 @@ def render_html_summary(resources: Mapping[str, List[StackResourceSummary]], sta
     """Return a string w/ an HTML document about a CFN stack and its resources."""
     j2env = jinja2.Environment(
         loader=jinja2.FileSystemLoader(pathlib.Path(__file__).parent),
-        autoescape=jinja2.select_autoescape(default=True)
+        autoescape=jinja2.select_autoescape(default=True, default_for_string=True)
     )
     template = j2env.get_template("stack-fragment-table.j2")
 
