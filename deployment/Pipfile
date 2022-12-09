@@ -4,20 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-"aws-cdk.core" = "==1.127"
-"aws-cdk.aws-s3-assets" = "==1.127"
-"aws-cdk.aws-lambda" = "==1.127"
-"aws-cdk.aws-logs" = "==1.127"
-"aws-cdk.aws-sns" = "==1.127"
-"aws-cdk.aws-sns-subscriptions" = "==1.127"
-"aws-cdk.aws-iam" = "==1.127"
-"aws-cdk.aws-sqs" = "==1.127"
-"aws-cdk.aws-cloudwatch" = "==1.127"
+"aws-cdk-lib" = "~=2.54.0"
+"constructs" = "~=10.1.183"
+"exceptiongroup" = "==1.0.0rc8"
+
 
 [dev-packages]
 "isort" = "~=5.10.1"
-"flake8" = "~=4.0.1"
-"autopep8" = "~=1.6.0"
+"flake8" = "~=5.0.4"
+"autopep8" = "~=1.7.0"
 
 [requires]
 python_version = "3.9"

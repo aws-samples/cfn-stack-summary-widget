@@ -1,12 +1,13 @@
 import json
 
-from aws_cdk import core as cdk
+from aws_cdk import Aws, CfnOutput, Stack
 from aws_cdk.aws_cloudwatch import CfnDashboard
+from constructs import Construct
 
 
-class SampleUsageCdkStack(cdk.Stack):
+class SampleUsageCdkStack(Stack):
 
-    def __init__(self, scope: cdk.Construct, construct_id: str, **kwargs) -> None:
+    def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
         summarizer_lambda_name = "CloudFormationStackSummarizer"
@@ -19,7 +20,7 @@ class SampleUsageCdkStack(cdk.Stack):
                     "x": 0,
                     "y": 0,
                     "properties": {
-                        "endpoint": f"arn:{cdk.Aws.PARTITION}:lambda:{cdk.Aws.REGION}:{cdk.Aws.ACCOUNT_ID}:function:{summarizer_lambda_name}",
+                        "endpoint": f"arn:{Aws.PARTITION}:lambda:{Aws.REGION}:{Aws.ACCOUNT_ID}:function:{summarizer_lambda_name}",
                         "title": "CloudFormation Resources",
                         "params": {
                             "stacks": [
@@ -36,7 +37,7 @@ class SampleUsageCdkStack(cdk.Stack):
                     "height": 9,
                     "properties": {
                         "query": f"SOURCE '/aws/lambda/{summarizer_lambda_name}' | fields @timestamp, @message\n| sort @timestamp desc\n| limit 20",
-                        "region": cdk.Aws.REGION,
+                        "region": Aws.REGION,
                         "stacked": False,
                         "view": "table"
                     }
@@ -46,6 +47,6 @@ class SampleUsageCdkStack(cdk.Stack):
 
         dashboard = CfnDashboard(self, "Dashboard", dashboard_body=json.dumps(dashboard_body))
 
-        cdk.CfnOutput(self, "DashboardUrl",
-                      value=f"https://{cdk.Aws.REGION}.console.aws.amazon.com/cloudwatch/home?region={cdk.Aws.REGION}#dashboards:name={dashboard.ref}"
-                      )
+        CfnOutput(self, "DashboardUrl",
+                  value=f"https://{Aws.REGION}.console.aws.amazon.com/cloudwatch/home?region={Aws.REGION}#dashboards:name={dashboard.ref}"
+                  )

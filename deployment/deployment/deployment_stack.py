@@ -1,20 +1,20 @@
 from pathlib import Path
 
-from aws_cdk import aws_iam
+from aws_cdk import (BundlingOptions, DockerImage, Duration, Environment,
+                     Stack, aws_iam)
 from aws_cdk import aws_s3_assets as assets
 from aws_cdk import aws_sns, aws_sqs
-from aws_cdk import core as cdk
 from aws_cdk.aws_lambda import Code, Function, Runtime
 from aws_cdk.aws_logs import RetentionDays
 from aws_cdk.aws_sns_subscriptions import SqsSubscription
-from aws_cdk.core import BundlingOptions, DockerImage
+from constructs import Construct
 
-VISIBILITY_TIMEOUT = cdk.Duration.seconds(120)
+VISIBILITY_TIMEOUT = Duration.seconds(120)
 
 
-class CloudFormationSummarizerStack(cdk.Stack):
+class CloudFormationSummarizerStack(Stack):
 
-    def __init__(self, scope: cdk.Construct, construct_id: str, env: cdk.Environment) -> None:
+    def __init__(self, scope: Construct, construct_id: str, env: Environment) -> None:
         super().__init__(scope, construct_id, env=env)
 
         topic = aws_sns.Topic(self, "CFNNotifications")

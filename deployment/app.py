@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 import os
 
-from aws_cdk import core as cdk
+from aws_cdk import App, Environment
 
 from deployment.deployment_stack import CloudFormationSummarizerStack
 
-app = cdk.App()
-CloudFormationSummarizerStack(app, "CloudFormationSummarizer", env=cdk.Environment(
+app = App()
+CloudFormationSummarizerStack(app, "CloudFormationSummarizer", env=Environment(
     account=os.getenv('CDK_DEFAULT_ACCOUNT'),
     region=os.getenv('CDK_DEFAULT_REGION')
 ))
