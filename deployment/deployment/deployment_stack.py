@@ -35,7 +35,7 @@ class CloudFormationSummarizerStack(Stack):
                             code=Code.from_bucket(code.bucket, code.s3_object_key),
                             function_name="CloudFormationStackSummarizer",
                             handler="lambda_src.handler",
-                            runtime=Runtime.PYTHON_3_9,
+                            runtime=Runtime.PYTHON_3_10,
                             timeout=VISIBILITY_TIMEOUT,
                             log_retention=RetentionDays.TWO_WEEKS
                             )
