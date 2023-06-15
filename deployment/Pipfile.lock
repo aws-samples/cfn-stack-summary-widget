@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c961d52212f9b4f28c1139b6959e3175b3bfe41ba290de10f19e2b8b9c7d9b5d"
+            "sha256": "03047b7c8df8da3ebb1dbacfeac1fc03a6c2d075af6ed9b5c76935bbef3fcac8"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.9"
+            "python_version": "3.10"
         },
         "sources": [
             {
@@ -18,59 +18,59 @@
     "default": {
         "attrs": {
             "hashes": [
-                "sha256:29adc2665447e5191d0e7c568fde78b21f9672d344281d0c6e1ab085429b22b6",
-                "sha256:86efa402f67bf2df34f51a335487cf46b1ec130d02b8d39fd248abfd30da551c"
+                "sha256:1f28b4522cdc2fb4256ac1a020c78acf9cba2c6b461ccd2c126f3aa8e8335d04",
+                "sha256:6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
             ],
-            "markers": "python_version >= '3.5'",
-            "version": "==22.1.0"
+            "markers": "python_version >= '3.7'",
+            "version": "==23.1.0"
         },
         "aws-cdk-lib": {
             "hashes": [
-                "sha256:1e3892d43ca7a069c0ebc5fe643ccd3420056dbffef04dec57ca90027e01dec5",
-                "sha256:372902cb23d08a1f926ca0489d1a02ecc5e8b7b3b4ef9746e221f5a62af6517f"
+                "sha256:1a559f6edb02eb436b2749fd7a108e9e9e7e2de040a04b0400d48ba711f1fdc1",
+                "sha256:cf79a526584c5fa694a5723dcd1dd4d90a0f28919ae93bc0a36b9d756145adfd"
             ],
             "index": "pypi",
-            "version": "==2.54.0"
+            "version": "==2.84.0"
         },
         "aws-cdk.asset-awscli-v1": {
             "hashes": [
-                "sha256:2d93033aba1448224df3fd90e5e50cc69d50abc421bb85a1cb98d151023fda7f",
-                "sha256:e4f6c1a80b3f822b31a120b0a485163e203a2c0471e0ed9bcdb9ed55d512627e"
+                "sha256:3e562d5af7f286823a805e4449aa910008916bed98fb2b4f813808b72fc6353d",
+                "sha256:6045c0f1c25cf20288d612e96c46f0fe2e60ba5a8f5067e27daf027c528e44f4"
             ],
             "markers": "python_version ~= '3.7'",
-            "version": "==2.2.30"
+            "version": "==2.2.191"
         },
         "aws-cdk.asset-kubectl-v20": {
             "hashes": [
-                "sha256:9834cdb150c5590aea4e5eba6de2a89b4c60617451181c524810c5a75154565c",
-                "sha256:a2fad1a5a35a94a465efe60859f91e45dacc33261fb9bbf1cf9bbc6e2f70e9d6"
+                "sha256:346283e43018a43e3b3ca571de3f44e85d49c038dc20851894cb8f9b2052b164",
+                "sha256:7f0617ab6cb942b066bd7174bf3e1f377e57878c3e1cddc21d6b2d13c92d0cc1"
             ],
             "markers": "python_version ~= '3.7'",
-            "version": "==2.1.1"
+            "version": "==2.1.2"
         },
         "aws-cdk.asset-node-proxy-agent-v5": {
             "hashes": [
-                "sha256:10e9f88849ab9b7d355ad489299388a285597c4409c2aff0227641344fb8b287",
-                "sha256:21b56e0ec84ece7b2fc08de1b337b54e76099673206d7b63fc7822ce7c2226d5"
+                "sha256:96afc5747276d21fc25a4aacdb361e3b1cb9a53b2a87a2affa20bbfbe87a0c65",
+                "sha256:e1afb5773d185cf5f335e4c2dd8dd09967a5e700b45eddf5559b24d7e665628d"
             ],
             "markers": "python_version ~= '3.7'",
-            "version": "==2.0.36"
+            "version": "==2.0.165"
         },
         "cattrs": {
             "hashes": [
-                "sha256:bc12b1f0d000b9f9bee83335887d532a1d3e99a833d1bf0882151c97d3e68c21",
-                "sha256:f0eed5642399423cf656e7b66ce92cdc5b963ecafd041d1b24d136fdde7acf6d"
+                "sha256:b2bb14311ac17bed0d58785e5a60f022e5431aca3932e3fc5cc8ed8639de50a4",
+                "sha256:db1c821b8c537382b2c7c66678c3790091ca0275ac486c76f3c8f3920e83c657"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==22.2.0"
+            "version": "==23.1.2"
         },
         "constructs": {
             "hashes": [
-                "sha256:033fe31de28505976fa3db7fe457cb89239073c415fe96294adf0e0f82a434f3",
-                "sha256:4296accfd507d633243db4c43a03023d587f91c5936f4860de1c2447c96460cc"
+                "sha256:2689938060479d91961533688a7ad8a9d6e3c41b9ddb5ba940a81645452bc6cb",
+                "sha256:88f8cd202f0a2b088ba43122ce306915b7deda52be785388bf3d31608e274d6a"
             ],
             "index": "pypi",
-            "version": "==10.1.183"
+            "version": "==10.2.52"
         },
         "exceptiongroup": {
             "hashes": [
@@ -80,13 +80,21 @@
             "index": "pypi",
             "version": "==1.0.0rc8"
         },
+        "importlib-resources": {
+            "hashes": [
+                "sha256:4be82589bf5c1d7999aedf2a45159d10cb3ca4f19b2271f8792bc8e6da7b22f6",
+                "sha256:7b1deeebbf351c7578e09bf2f63fa2ce8b5ffec296e0d349139d43cca061a81a"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==5.12.0"
+        },
         "jsii": {
             "hashes": [
-                "sha256:4dcf65eca9400c15a6a7c9d85b27f4bfe15c96ad3e36272a502f391556858151",
-                "sha256:6daf1c17362bd07c50c299e08d9a4454075550eb78e035a160ecf9ea68ded3cf"
+                "sha256:29f8352525e980e126d5d0fd3510fff9a81a8dbc36249f99d922907f2e6bf4c3",
+                "sha256:7748205665d079112721d6eb23a37fa084722ab675f65e8a6514ec908660bd57"
             ],
             "markers": "python_version ~= '3.7'",
-            "version": "==1.72.0"
+            "version": "==1.84.0"
         },
         "publication": {
             "hashes": [
@@ -121,11 +129,11 @@
         },
         "typing-extensions": {
             "hashes": [
-                "sha256:1511434bb92bf8dd198c12b1cc812e800d4181cfcb867674e0f8279cc93087aa",
-                "sha256:16fa4864408f655d35ec496218b85f79b3437c829e93320c7c9215ccfd92489e"
+                "sha256:88a4153d8505aabbb4e13aacb7c486c2b4a33ca3b3f807914a9b4c844c471c26",
+                "sha256:d91d5919357fe7f681a9f2b5b4cb2a5f1ef0a1e9f59c4d8ff0d3491e05c0ffd5"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==4.4.0"
+            "version": "==4.6.3"
         }
     },
     "develop": {
