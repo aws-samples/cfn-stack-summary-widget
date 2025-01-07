@@ -4,10 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-"Jinja2" = "~=3.1.4"
-"requests" = "~=2.32.0"
-"boto3" = "~=1.18.61"
-"botocore" = "~=1.21.61"
+"Jinja2" = "~=3.1.5"
+"requests" = "~=2.32.3"
+"boto3" = "~=1.35.93"
+"botocore" = "~=1.35.93"
 # fix an issue with ImportError: cannot import name 'soft_unicode' from 'markupsafe'
 # similar to issue described here: https://github.com/aws/aws-sam-cli/issues/3661
 "markupsafe" = "==2.0.1"
